@@ -1,0 +1,155 @@
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+    font-family: 'Raleway' !important;
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    background-color: black;
+}
+
+h2, h3{
+    font-family: 'Raleway';
+
+}
+
+#title{
+    text-align: left;
+    padding-left: 20px;
+}
+
+img#logo {
+    height: 400px;
+    float:left;
+    display:inline-block;
+}
+
+.decription {
+    font-family: 'Raleway';
+    background-color: grey;
+    border-radius: 3px;
+    position:relative;
+    bottom:0px;
+    float:left;
+}
+
+.incidents{
+    border-width: thin;
+}
+
+form, #form {
+    width:400px;
+    float:left;
+    display:inline-block;
+    padding:20px;
+    margin-left: 20px;
+
+}
+
+#content {
+
+}
+
+#bubbles {
+    float:left;
+    display:inline-block;
+    width:700px;
+}
+
+#wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+.circle{
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    background-color: #e6f2ff;
+    width:220px;
+    height:220px;
+    border: 2px solid #66CCFF;
+    display: inline-block;
+    padding:20px;
+    box-shadow: 10px 10px 30px 20px #A4E3FA inset,8px 8px 4px #888888;
+
+}
+.circle2{
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    background-color: #cce6ff;
+    width:160px;
+    height:160px;
+    border: 3px solid #66CCFF;
+    display: inline-block;
+    padding:20px;
+    box-shadow: 5px 5px 15px 10px #99ccff inset,8px 8px 4px #888888;
+
+}
+
+
+.circle3{
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width:50px;
+    height:50px;
+    border: 1px solid #66CCFF;
+    display: inline-block;
+    padding:20px;
+    opacity:0.4;
+
+}
+
+.circle4{
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width:10px;
+    height:10px;
+    border: 1px solid #66CCFF;
+    display: inline-block;
+    padding:20px;
+    opacity:0.4;
+
+}
+.utext {
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.htext {
+    text-align: center;
+
+}
+
+.labeltext, .image {
+    text-align: center;
+    font-size: 11px;
+}
+
+#Loremtext{
+    position:relative;
+    bottom:0px;
+    font-size: 14px;
+    font-color:darkblue;
+    font-weight: bold;
+    font-family: 'Raleway';
+    width:1000px;
+    float:right;
+    padding: 30px;
+    margin-bottom: 5%;
+}
+
+.date {
+    color:white;
+}
+
+.github {
+    float:right;
+}

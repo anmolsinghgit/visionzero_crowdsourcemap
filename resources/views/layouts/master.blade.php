@@ -7,7 +7,7 @@
     </title>
 
     <meta charset='utf-8'>
-    <link href="/css/foobooks.css" type='text/css' rel='stylesheet'>
+    <link href="/css/safetymap.css" type='text/css' rel='stylesheet'>
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'>
 
    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
@@ -21,15 +21,14 @@
 
     <header>
         <img
-        src='http://making-the-internet.s3.amazonaws.com/laravel-foobooks-logo@2x.png'
-        style='width:300px'
-        alt='Foobooks Logo'>
+        src='/images/311head.png'
+        alt='Safetymap Logo'>
     </header>
 
     <nav>
        <ul>
-           <li><a href='/books/index'>View all books</a>
-            <li><a href='/books/create'>Add new book</a></li>
+           <li><a href='/'>View all incidents</a>
+            <li><a href='/practice'>Add new safety concern</a></li>
         </ul>
    </nav>
 

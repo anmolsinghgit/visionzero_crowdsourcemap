@@ -11,7 +11,8 @@ class IncidentController extends Controller {
     * Responds to requests to GET /books
     */
     public function getIndex() {
-        return 'List all the incidents';
+        $incidents = \Safetymap\Incident::orderBy('id', 'desc')->get();
+        return view('incidents.show')->with('incidents', $incidents);
     }
 
 

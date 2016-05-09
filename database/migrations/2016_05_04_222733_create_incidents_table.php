@@ -19,8 +19,8 @@ class CreateIncidentsTable extends Migration
         # This generates two columns: `created_at` and `updated_at` to
         # keep track of changes to a row
         $table->timestamps();
-        // $table->double('latitude');
-        // $table->double('longitude');
+        $table->double('latitude');
+        $table->double('longitude');
         # The rest of the fields...
         $table->string('neighborhood');
         $table->string('type');
