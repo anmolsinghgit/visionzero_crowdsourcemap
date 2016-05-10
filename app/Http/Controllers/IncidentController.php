@@ -18,8 +18,18 @@ class IncidentController extends Controller {
     }
 
 
-    public function getShow($id) {
-        return 'Show incident: '.$id;
+    public function getShow($id = null) {
+        $incident =\Safetymap\Incident::find($id);
+
+        if(is_null($incident)) {
+            \Session::flash('message', 'Incident not found');
+            return redirect('/');
+        }
+
+        return view('incidents.single')->with('incident', $incident);
+
+
+        // return 'Show incident: '.$id;
     }
 
 
@@ -38,13 +48,21 @@ class IncidentController extends Controller {
 
 
     public function postCreate(Request $request) {
+
+        $messages = [
+
+            'not_in' => 'You have to choose a neighborhood.',
+            'max' => 'You have to choose a neighborhood.'
+        ];
+
+
         $this->validate($request, [
             'type'=>'required|min:3',
             'latitude'=>'required',
             'longitude'=>'required',
-            'neighborhood'=>'required|min:3',
+            'neighborhood'=> 'not_in:0|max:19'
 
-        ]);
+        ], $messages);
 
         #Add the incident
 

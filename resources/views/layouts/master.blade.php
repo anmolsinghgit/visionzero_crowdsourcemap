@@ -35,7 +35,7 @@
            @if(Auth::check())
             <li><a href='/'>View all incidents</a>
             <li><a href='/practice'>Add new safety concern</a></li>
-            <li><a href='/logout'>Logout</a></li>
+            <li><a href='/logout'>Logout {{ $user->name }}</a></li>
             @else
             <li><a href='/'>View all incidents</a>
             <li><a href='/login'>Login</a></li>

@@ -156,6 +156,7 @@ return [
         Safetymap\Providers\EventServiceProvider::class,
         Safetymap\Providers\RouteServiceProvider::class,
 
+        'Safetymap\Providers\ComposerServiceProvider',
     ],
 
     /*

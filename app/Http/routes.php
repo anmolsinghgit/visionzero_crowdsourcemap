@@ -58,6 +58,7 @@ Route::group(['middleware'=> 'auth'], function() {
 
 });
 
+Route::get('/show/{id?}', 'IncidentController@getShow');
 
 
 Route::get('/practice/ex1', 'PracticeController@getEx1');

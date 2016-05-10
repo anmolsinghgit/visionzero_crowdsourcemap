@@ -13,6 +13,7 @@ class Incident extends Model
 
         $neighborhoods = \Safetymap\Incident::orderBy('neighborhood', 'ASC')->get();
         $neighborhoods_for_dropdown = [];
+        $neighborhoods_for_dropdown[0] = 'Choose a neighborhood...';
 
         #Build array for neighborhood dropdown
         foreach($neighborhoods as $neighborhood){
