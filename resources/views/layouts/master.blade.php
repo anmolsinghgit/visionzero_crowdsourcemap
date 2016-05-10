@@ -19,16 +19,28 @@
 </head>
 <body>
 
+
+
     <header>
         <img
         src='/images/311head.png'
         alt='Safetymap Logo'>
     </header>
+        @if(Session::get('message')!= null)
+                <div class= 'flash_message'>{{Session::get('message')}}</div>
+        @endif
 
     <nav>
        <ul>
-           <li><a href='/'>View all incidents</a>
+           @if(Auth::check())
+            <li><a href='/'>View all incidents</a>
             <li><a href='/practice'>Add new safety concern</a></li>
+            <li><a href='/logout'>Logout</a></li>
+            @else
+            <li><a href='/'>View all incidents</a>
+            <li><a href='/login'>Login</a></li>
+            <li><a href='/register'>Register</a></li>
+            @endif
         </ul>
    </nav>
 

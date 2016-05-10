@@ -4,17 +4,61 @@
 |--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
-|
+
+
+
 | Here is where you can register all of the routes for an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
 */
 
+#--------------------------
+#Authentication
+#---------------------------
+# Show login form
+Route::get('/login', 'Auth\AuthController@getLogin');
+# Process login form
+Route::post('/login', 'Auth\AuthController@postLogin');
+# Process logout
+Route::get('/logout', 'Auth\AuthController@logout');
+# Show registration form
+Route::get('/register', 'Auth\AuthController@getRegister');
+# Process registration form
+Route::post('/register', 'Auth\AuthController@postRegister');
+
+Route::get('/show-login-status', function() {
+
+    # You may access the authenticated user via the Auth facade
+    $user = Auth::user();
+
+    if($user) {
+        echo 'You are logged in.';
+        dump($user->toArray());
+    } else {
+        echo 'You are not logged in.';
+    }
+
+    return;
+
+});
+
+#--------------------------
+#Practice Routes
+#----------------------------
 Route::get('/', 'IncidentController@getIndex');
 
-Route::get('/practice', 'IncidentController@getCreate');
-Route::post('/practice', 'IncidentController@postCreate');
+Route::group(['middleware'=> 'auth'], function() {
+
+    Route::get('/edit/{id?}', 'IncidentController@getEdit');
+    Route::post('/edit', 'IncidentController@postEdit');
+
+    Route::get('/practice', 'IncidentController@getCreate');
+    Route::post('/practice', 'IncidentController@postCreate');
+
+});
+
+
 
 Route::get('/practice/ex1', 'PracticeController@getEx1');
 Route::get('/practice/ex2', 'PracticeController@getEx2');
@@ -23,6 +67,7 @@ Route::get('/practice/ex4', 'PracticeController@getEx4');
 Route::get('/practice/ex5', 'PracticeController@getEx5');
 Route::get('/practice/ex6', 'PracticeController@getEx6');
 Route::get('/practice/ex16', 'PracticeController@getEx16');
+Route::get('/practice/ex24', 'PracticeController@getEx24');
 
 Route::get('/debug', function() {
 

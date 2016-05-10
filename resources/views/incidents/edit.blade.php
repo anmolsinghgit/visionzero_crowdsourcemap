@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Add incident
+    Edit incident: {{$incident->type}}
 @stop
 
 @section('content')
@@ -14,15 +14,18 @@
         @endforeach
     </ul>
     @endif
-    <h1> Add new safety concern </h1>
-    <form method ='POST' class='form' action = "/practice">
+    <h1> Edit incident: {{$incident->type}}</h1>
+    <form method ='POST' class='form' action = "/edit">
+
+        <input type ='hidden' name ='id' value='{{$incident->id}}'>
+
         {{csrf_field()}}
         <div class = "form-group">
             <label>Latitude:</label>
             <input type ='text'
             id = 'latitude'
             name = 'latitude'
-            value = '{{ old('latitude', '42.367280')}}'
+            value = '{{ $incident->latitude }}'
             >
             <div class='error'>{{ $errors->first('latitude') }}</div>
 
@@ -33,7 +36,7 @@
             <input type ='text'
             id = 'longitude'
             name = 'longitude'
-            value = '{{ old('longitude','-71.0650312')}}'
+            value = '{{ $incident->longitude}}'
             >
             <div class='error'>{{ $errors->first('longitude') }}</div>
 
@@ -43,12 +46,17 @@
             <label for ='neighborhood'>Neighborhood:</label>
             <select name="neighborhood" id='neighborhood'>
                 @foreach($neighborhoods_for_dropdown as $id=>$neighborhood)
-                    <option value='{{$neighborhood}}'>
+
+                    <option value='{{$neighborhood}}'{{($incident->id == $id)? 'SELECTED': ''}}>
                         {{$neighborhood}}
                     </option>
                 @endforeach
             </select>
-        
+            <!-- <input type ='text'
+            id = 'neighborhood'
+            name = 'neighborhood'
+            value = '{{ $incident->neighborhood}}'
+            > -->
              <div class='error'>{{ $errors->first('neighborhood') }}</div>
         </div>
 
@@ -57,7 +65,7 @@
             <input type ='text'
             id = 'type'
             name = 'type'
-            value = '{{ old('type', 'There are no bike facilities or they need maintenance')}}'
+            value = '{{ $incident->type}}'
             >
             <div class='error'>{{ $errors->first('type') }}</div>
 
@@ -72,11 +80,11 @@
             rows = '3'
             id = 'text'
             name = 'text'
-            value = '{{ old('text', 'Need bike lanes or cycle tracks on Nashua St, especially northbound')}}'>
+            value = '{{ $incident->text}}'>
 
             <div class='error'>{{ $errors->first('text') }}</div>
         </div>
 
-        <button type='submit' class='btn btn-primary'>Add incident</button>
+        <button type='submit' class='btn btn-primary'>Save changes</button>
     </form>
 @stop

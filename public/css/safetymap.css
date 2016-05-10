@@ -11,7 +11,7 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 120px;
+    height: 20px;
     width: 100%;
     background-color: black;
 }
@@ -32,7 +32,7 @@ img#logo {
     display:inline-block;
 }
 
-.decription {
+.description {
     font-family: 'Raleway';
     background-color: grey;
     border-radius: 3px;
@@ -152,4 +152,8 @@ form, #form {
 
 .github {
     float:right;
+}
+
+.flassh_message{
+    color:red;
 }
