@@ -8,6 +8,9 @@ class Incident extends Model
 {
     protected $fillable= ['latitude','longitude','neighborhood','type','text'];
 
+    public function user() {
+        return $this->belongsTo('\Safetymap\User');
+    }
 
     public static function neighborhoodsForDropdown(){
 
@@ -24,6 +27,25 @@ class Incident extends Model
 
         return $neighborhoods_for_dropdown;
     }
+
+
+    public static function typesForDropdown(){
+
+        $types = \Safetymap\Incident::orderBy('type', 'ASC')->get();
+        $types_for_dropdown = [];
+        $types_for_dropdown[0] = 'Choose a safety concern...';
+
+        #Build array for neighborhood dropdown
+        foreach($types as $type){
+            $types_for_dropdown[$type->id] = $type->type;
+        }
+
+        $types_for_dropdown = array_unique($types_for_dropdown);
+
+        return $types_for_dropdown;
+    }
+
+
 
 
 }

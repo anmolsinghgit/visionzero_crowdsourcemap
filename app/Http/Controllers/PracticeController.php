@@ -4,8 +4,43 @@ namespace Safetymap\Http\Controllers;
 
 use Safetymap\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use JavaScript;
 
 class PracticeController extends Controller {
+
+
+
+    public function getEx26() {
+
+        $apiUrl = "http://map01.cityofboston.gov:6080/arcgis/rest/services/BTD/VZSafety/MapServer/0/query?inSR=4326&where=1%3D1&outSR=4326&outFields=*&returnGeometry=true&f=json&callback";
+        $jsonStringResults = file_get_contents($apiUrl);
+
+        $data = json_decode($jsonStringResults, true);
+
+        # Show all the data
+        dump($data);
+
+        # Loop through the data printing just the title for each book
+        foreach($data['features'] as $incident) {
+            echo $incident['attributes']['REQUESTTYPE'].'<br>';
+            echo $incident['attributes']['COMMENTS'].'<br>';
+            echo $incident['geometry']['x'].'<br>';
+            echo $incident['geometry']['y'].'<br>';
+
+        }
+        return view('practice.test')->with('incident', $incident);
+    }
+    public function getEx25(){
+
+            JavaScript::put([
+                'foo' => 'bar'
+            ]);
+
+            $hello = 'hello';
+
+            return view('practice.test')->with('hello', $hello);
+
+    }
 
     public function getEx24() {
         $apiUrl = "http://map01.cityofboston.gov:6080/arcgis/rest/services/BTD/VZSafety/MapServer/0/query?inSR=4326&where=1%3D1&outSR=4326&outFields=*&returnGeometry=true&f=json&callback";
@@ -22,6 +57,7 @@ class PracticeController extends Controller {
             echo $incident['attributes']['COMMENTS'].'<br>';
             echo $incident['geometry']['x'].'<br>';
             echo $incident['geometry']['y'].'<br>';
+
         }
 
     }

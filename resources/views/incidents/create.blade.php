@@ -15,7 +15,7 @@
     </ul>
     @endif
     <h1> Add new safety concern </h1>
-    <form method ='POST' class='form' action = "/practice">
+    <form method ='POST' class='form-horizontal save-form' id='form_' action = "/practice">
         {{csrf_field()}}
         <div class = "form-group">
             <label>Latitude:</label>
@@ -48,17 +48,19 @@
                     </option>
                 @endforeach
             </select>
-        
+
              <div class='error'>{{ $errors->first('neighborhood') }}</div>
         </div>
 
         <div class = "form-group">
             <label>Type:</label>
-            <input type ='text'
-            id = 'type'
-            name = 'type'
-            value = '{{ old('type', 'There are no bike facilities or they need maintenance')}}'
-            >
+            <select name="type" id='type'>
+                @foreach($types_for_dropdown as $id=>$type)
+                    <option value='{{$type}}'>
+                        {{$type}}
+                    </option>
+                @endforeach
+            </select>
             <div class='error'>{{ $errors->first('type') }}</div>
 
         </div>
@@ -77,6 +79,6 @@
             <div class='error'>{{ $errors->first('text') }}</div>
         </div>
 
-        <button type='submit' class='btn btn-primary'>Add incident</button>
+        <button type='submit' class="sForm" class='btn btn-primary'>Add incident</button>
     </form>
 @stop

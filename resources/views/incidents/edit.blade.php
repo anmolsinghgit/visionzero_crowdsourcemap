@@ -62,12 +62,14 @@
 
         <div class = "form-group">
             <label>Type:</label>
-            <input type ='text'
-            id = 'type'
-            name = 'type'
-            value = '{{ $incident->type}}'
-            >
-            <div class='error'>{{ $errors->first('type') }}</div>
+            <select name="type" id='type'>
+                @foreach($types_for_dropdown as $id=>$type)
+
+                    <option value='{{$type}}'{{($incident->id == $id)? 'SELECTED': ''}}>
+                        {{$type}}
+                    </option>
+                @endforeach
+            </select>
 
         </div>
 

@@ -48,17 +48,26 @@ Route::get('/show-login-status', function() {
 #----------------------------
 Route::get('/', 'IncidentController@getIndex');
 
+
 Route::group(['middleware'=> 'auth'], function() {
 
     Route::get('/edit/{id?}', 'IncidentController@getEdit');
     Route::post('/edit', 'IncidentController@postEdit');
 
-    Route::get('/practice', 'IncidentController@getCreate');
-    Route::post('/practice', 'IncidentController@postCreate');
+    Route::get('/create', 'IncidentController@getCreate');
+    Route::post('/create', 'IncidentController@postCreate');
+
+    Route::get('/confirm-delete/{id?}', 'IncidentController@getConfirmDelete');
+    Route::get('/delete/{id?}', 'IncidentController@getDoDelete');
+
+    Route::get('/show/{id?}', 'IncidentController@getShow');
+
+
 
 });
 
-Route::get('/show/{id?}', 'IncidentController@getShow');
+
+
 
 
 Route::get('/practice/ex1', 'PracticeController@getEx1');
@@ -69,6 +78,8 @@ Route::get('/practice/ex5', 'PracticeController@getEx5');
 Route::get('/practice/ex6', 'PracticeController@getEx6');
 Route::get('/practice/ex16', 'PracticeController@getEx16');
 Route::get('/practice/ex24', 'PracticeController@getEx24');
+Route::get('/practice/ex25', 'PracticeController@getEx25');
+Route::get('/practice/ex26', 'PracticeController@getEx26');
 
 Route::get('/debug', function() {
 
