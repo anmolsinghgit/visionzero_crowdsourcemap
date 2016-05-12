@@ -3,7 +3,7 @@
 <style type="text/css">
 
 </style>
-<head>
+
     <title>
         {{-- Yield the title if it exists, otherwise default to 'Foobooks' --}}
         @yield('title','Foobooks')
@@ -26,7 +26,7 @@
    <script type="text/javascript" src="/js/main.js"></script>
 
 
-</head>
+
 <body onload="boston.initialize()">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
