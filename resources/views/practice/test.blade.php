@@ -1,5 +1,1 @@
-@section('page-script')
-<script type="text/javascript">
-    {{$hello}};
-</script>
-@stop
+<p>lat: {{$lat}}</p>

@@ -12,6 +12,10 @@ class Incident extends Model
         return $this->belongsTo('\Safetymap\User');
     }
 
+    public function target() {
+        return $this->belongsTo('\Safetymap\Target');
+    }
+
     public static function neighborhoodsForDropdown(){
 
         $neighborhoods = \Safetymap\Incident::orderBy('neighborhood', 'ASC')->get();

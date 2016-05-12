@@ -15,7 +15,7 @@
     </ul>
     @endif
     <h1> Add new safety concern </h1>
-    <form method ='POST' class='form-horizontal save-form' id='form_' action = "/practice">
+    <form method ='POST' class='form-horizontal save-form' id='form_' onsubmit='myFunction();' action = "/create">
         {{csrf_field()}}
         <div class = "form-group">
             <label>Latitude:</label>
@@ -81,4 +81,29 @@
 
         <button type='submit' class="sForm" class='btn btn-primary'>Add incident</button>
     </form>
+@stop
+
+
+@section('page-script')
+<script type="text/javascript">
+
+ // function myFunction(){
+ //        $.ajax({
+ //                type: "POST",
+ //
+ //
+ //                url: "http://localhost/create",
+ //                data: {
+ //                    lat:34
+ //                },
+ //                cache: false,
+ //                success: function(data) {
+ //                     alert(data);
+ //                 }
+ //         });
+ //          event.preventDefault();
+ //         return false;
+ //
+ //     }
+</script>
 @stop

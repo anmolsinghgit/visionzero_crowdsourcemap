@@ -13,8 +13,14 @@ class IncidentController extends Controller {
 
     //If have another table add in eager loading
     public function getIndex() {
-        $incidents = \Safetymap\Incident::orderBy('id', 'desc')->get();
+        $incidents = \Safetymap\Incident::where('user_id','=', \Auth::id())->orderBy('id', 'desc')->get();
         return view('incidents.show')->with('incidents', $incidents);
+    }
+
+
+    public function getAll() {
+        $incidents = \Safetymap\Incident::orderBy('id', 'desc')->get();
+        return view('incidents.index')->with('incidents', $incidents);
     }
 
 
@@ -57,9 +63,12 @@ class IncidentController extends Controller {
             'max' => 'You have to choose a neighborhood.'
         ];
 
-        $lat = $request['lat'];
-        $long = $request['lat'];
+        $lat = $request->lat;
+        $long = $request->long;
 
+        dump($lat);
+
+        // return view('practice.test')->('lat', $lat);
 
 
         $this->validate($request, [
@@ -73,8 +82,8 @@ class IncidentController extends Controller {
         // #Add the incident
         //
         $incident = new \Safetymap\Incident();
-        $incident->latitude= $request['lat'];
-        $incident->longitude= $request['lat'];
+        $incident->latitude= $request->latitude;
+        $incident->longitude= $request->longitude;
         $incident->neighborhood = $request->neighborhood;
         $incident->type= $request->type;
         $incident->text= $request->text;
@@ -92,7 +101,7 @@ class IncidentController extends Controller {
 
         \Session::flash('message', 'Your concern was added');
 
-        return redirect('/practice');
+        return redirect('/');
     }
 
     public function getEdit($id){

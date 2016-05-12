@@ -96,21 +96,29 @@ boston.initialize = function()
 
         console.log(lat);
 
+        $.post('/IncidentController/create', {lat:lat, long:long}, function(data) {
+            console.log(data);
+        });
 
 
-        $('#form_').on('submit', function () {
-                $.ajax({
-                        type: "POST",
-                        url: "./practice",
-                        data: {
-                            lat:34,
-                            long:71
-                        },
-                        success: function(data) {
-                             alert(data);
-                         }
-                 });
-                 return false;
+        $('.sForm').on('click', function () {
+
+
+                // $.ajax({
+                //         type: "POST",
+                //
+                //
+                //         url: "http://localhost/create",
+                //         data: {
+                //             lat:34
+                //         },
+                            //cache: false,
+                //         success: function(data) {
+                //              alert(data);
+                //          }
+                //  });
+                //   event.preventDefault();
+                //  return false;
              });
 
     });

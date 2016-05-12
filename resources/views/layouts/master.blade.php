@@ -29,31 +29,24 @@
 
 </head>
 <body onload="boston.initialize()">
-        <!-- side panel div container -->
-        <div id="toc" class="well">
 
-            <div>
-                <!-- search form -->
-                <form class="form-horizontal">
-                    <fieldset>
-                        <div class="control-group">
-                            <input type="text" id="address">
-                            <input type="button" value="find" onClick="boston.geocode()" class="btn btn-primary">
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+    <header>
+        <img id ="logo"
+        src='/images/311head.png'
+        alt='Safetymap Logo'>
+    </header>
+
+
+    <div class="control-group">
+            <input type="text" id="address">
+            <input type="button" value="find" onClick="boston.geocode()" class="btn btn-primary">
+    </div>
+
+
         <!-- map div container -->
         <div id="map_canvas"></div>
 
 
-
-    <header>
-        <img
-        src='/images/311head.png'
-        alt='Safetymap Logo'>
-    </header>
         @if(Session::get('message')!= null)
                 <div class= 'flash_message'>{{Session::get('message')}}</div>
         @endif
@@ -61,11 +54,12 @@
     <nav>
        <ul>
            @if(Auth::check())
-            <li><a href='/'>View all incidents</a>
-            <li><a href='/practice'>Add new safety concern</a></li>
+            <li><a href='/index'>View all incidents</a>
+            <li><a href='/view'>View my safety concerns</a>
+            <li><a href='/create'>Add new safety concern</a></li>
             <li><a href='/logout'>Logout {{ $user->name }}</a></li>
             @else
-            <li><a href='/'>View all incidents</a>
+            <li><a href='/index'>View all incidents</a>
             <li><a href='/login'>Login</a></li>
             <li><a href='/register'>Register</a></li>
             @endif
@@ -87,9 +81,9 @@
         <span id="edit-button" class="btn " onclick="boston.toggleEditMode()"><i class="icon-pencil"></i> Let me draw on this map</span>
     </div>
 
-    <footer>
+    <!-- <footer>
         &copy; {{ date('Y') }}
-    </footer>
+    </footer> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 

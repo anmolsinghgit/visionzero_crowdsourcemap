@@ -17,9 +17,10 @@ class IncidentsTableSeeder extends Seeder
        'latitude' => 42.3658459,
        'longitude' => -71.054227,
        'neighborhood' => 'North End',
-       'type' => 'It’s hard to see cyclists and pedestrians',
+       'type' => 'It’s hard to see cyclists',
        'text' => 'Very narrow one way street with construction work being done. Potentially hazardous for pedestrians, cyclists, and motorists.',
-    //    'user_id'=>1,
+        'user_id'=>1,
+        'target_id'=>1,
         ]);
 
 
@@ -31,7 +32,8 @@ class IncidentsTableSeeder extends Seeder
        'neighborhood' => ' North End',
        'type' => 'Of something not listed here',
        'text' => 'Cars heading south on North St block the box which makes it unsafe for pedestrians and hard for cars on Clinton St turning left',
-    //    'user_id'=>1,
+       'user_id'=>1,
+       'target_id'=>1,
         ]);
 
 
@@ -43,7 +45,8 @@ class IncidentsTableSeeder extends Seeder
        'neighborhood' => 'Financial District/Downtown',
        'type' => 'Pedestrians cross away from the crosswalks',
        'text' => "People constantly ignore the walk or don't walk signals and cross in front of cars who have the light. They also cross away from the crosswalks and walk down the median. It's dangerous for themselves and for others.",
-    //    'user_id'=>1,
+       'user_id'=>1,
+       'target_id'=>2,
         ]);
 
 
@@ -55,7 +58,8 @@ class IncidentsTableSeeder extends Seeder
         'neighborhood' => 'Financial District/Downtown',
         'type' => 'People double park their vehicles',
         'text' => "This section of congress is very narrow but taxis regularly stop to drop off passengers and back up traffic into the intersection. Also Ubers and other people dropping off/picking up. Paint curbs red and strongly enforce no stopping/idling.",
-        // 'user_id'=>1,
+         'user_id'=>1,
+         'target_id'=>3,
         ]);
     }
 

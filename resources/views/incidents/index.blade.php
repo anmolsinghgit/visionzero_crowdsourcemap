@@ -16,12 +16,7 @@
         @endforeach
     </ul>
     @endif
-    <h3> View my safety concerns </h3>
-
-    @if(sizeof($incidents) == 0)
-    You have not added any safety concerns.
-    @else
-
+    <h3> View all safety concerns </h3>
 
     <div class= 'incidents'>
         @foreach($incidents as $incident)
@@ -31,6 +26,4 @@
             <a href='/confirm-delete/{{$incident->id}}'>Delete</a><br>
         @endforeach
     </div>
-
-        @endif
 @stop
