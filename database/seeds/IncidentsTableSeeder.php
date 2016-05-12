@@ -133,7 +133,7 @@ class IncidentsTableSeeder extends Seeder
                 'latitude' => 42.30175671,
                 'longitude' => -71.0978396443,
                 'neighborhood' => 'Brighton',
-                'type' => 'Of something that is not listed here',
+                'type' => 'Of something not listed here',
                 'text' => "The bike lane is wide enough to accommodate a car, so drivers use it as a driving lane. The city should install flex-posts to prevent driving in the bike lane.",
                  'user_id'=>2,
                  'target_id'=>1,
@@ -297,8 +297,6 @@ class IncidentsTableSeeder extends Seeder
          'user_id'=>2,
          'target_id'=>1,
         ]);
-
-
 
     }
 

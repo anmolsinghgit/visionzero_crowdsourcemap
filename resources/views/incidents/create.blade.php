@@ -1,14 +1,15 @@
 @extends('layouts.master')
 
+@if(Session::get('flash_message') != null))
+<div class='flash_message'>{{ Session::get('flash_message') }}</div>
+@endif
 
 @section('title')
     Add incident
 @stop
 
 @section('content')
-    @if(Session::get('flash_message') != null))
-    <div class='flash_message'>{{ Session::get('flash_message') }}</div>
-    @endif
+
 
     @if(count($errors) > 0)
     <ul>

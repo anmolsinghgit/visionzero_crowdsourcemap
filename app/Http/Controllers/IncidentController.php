@@ -63,11 +63,13 @@ class IncidentController extends Controller {
 
 
         $this->validate($request, [
-            'type'=>'required|min:3|not_in:0',
+            'type'=>'required|not_in:0',
             'latitude'=>'required',
             'longitude'=>'required',
             'neighborhood'=> 'not_in:0|max:19',
-            // 'target_id'=>'required',
+            'text'=> 'required',
+            'target_id'=> 'not_in:0|required|max:11',
+
 
         ], $messages);
 
