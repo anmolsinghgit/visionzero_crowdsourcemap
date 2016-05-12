@@ -1,15 +1,15 @@
-## P3
-# Bubble Generator 
+## P4
+## Nearly Missed Me Application
 
 ## Live URL
 <http://p4.loosine.com>
 
 ## Description
-Boston Bike Safety Map
-A map to locate zones in the city that are particular dangerous to cyclists. These are locations where cyclists were “nearly missed” by motor vehicles. 
+Boston Bike Safety 
+These are locations where cyclists, pedestrians, motorists and  were “nearly missed” by motor vehicles. 
 
 Description
-Users with CRUD interactions are able to input locations of dangerous intersections in Boston using a google maps interface and a user form. The latitude and longitude values of the locations will be used to create new markers on the map with tooltips showing details about the “nearly missed” location given by the user. Users can read and update these points on the map.
+Users with CRUD interactions are able to input locations of dangerous intersections in Boston using a google maps interface and a user form. The latitude and longitude values of the locations will be used (in the future) to create new markers on the map with tooltips showing details about the “nearly missed” location given by the user. Users can read and update these points on the map.
 
 
 ## Demo
