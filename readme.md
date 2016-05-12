@@ -1,27 +1,34 @@
-# Laravel PHP Framework
+## P3
+# Bubble Generator 
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Live URL
+<http://p4.loosine.com>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Description
+Boston Bike Safety Map
+A map to locate zones in the city that are particular dangerous to cyclists. These are locations where cyclists were “nearly missed” by motor vehicles. 
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Description
+Users with CRUD interactions are able to input locations of dangerous intersections in Boston using a google maps interface and a user form. The latitude and longitude values of the locations will be used to create new markers on the map with tooltips showing details about the “nearly missed” location given by the user. Users can read and update these points on the map.
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Demo
+<http://www.screencast.com/t/uriDXDLK0ddR>
 
-## Contributing
+## Details for teaching team
+Project complete for the requirements of the course, but I will continue to work on it in the upcoming weeks. Follows CRUD but I will work to connect to Microsoft SQL server and map points from data api. <http://loosine.com/data>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
+## Outside code
+###Laracast Utilities 
+Did testing to explore interaction between php data parsing and mapping using this package.
+<https://packagist.org/packages/laracasts/utilities>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+bootstrap
+<http://getbootstrap.com/>
+
+Google Maps API
+
 
 ## License
-
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
