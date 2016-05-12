@@ -78,7 +78,7 @@ Route::get('/practice/ex4', 'PracticeController@getEx4');
 // Route::get('/practice/ex5', 'PracticeController@getEx5');
 // Route::get('/practice/ex6', 'PracticeController@getEx6');
 Route::get('/practice/ex16', 'PracticeController@getEx16');
-Route::get('/practice/ex24', 'PracticeController@getEx24');
+Route::get('/data', 'PracticeController@getEx24');
 Route::get('/practice/ex25', 'PracticeController@getEx25');
 Route::get('/practice/ex26', 'PracticeController@getEx26');
 
