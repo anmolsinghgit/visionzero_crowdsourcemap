@@ -24,8 +24,7 @@
    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
    <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css' rel='stylesheet'>
    <script type="text/javascript" src="/js/main.js"></script>
-    {{-- Yield any page specific CSS files or anything else you might want in the <head> --}}
-    @yield('head')
+
 
 </head>
 <body onload="boston.initialize()">
@@ -49,7 +48,7 @@
         <img id ="logo"
         src='/images/311head.png'
         alt='Safetymap Logo'>
-        <button type="button" id ="about"class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">About this project</button>
+        <button type="button" id ="about" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">About this project</button>
 
     </header>
 
@@ -108,7 +107,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <h3>Boston Bike Safety Map</h3>
