@@ -64,7 +64,6 @@
             <label>Type:</label>
             <select name="type" id='type'>
                 @foreach($types_for_dropdown as $id=>$type)
-
                     <option value='{{$type}}'{{($incident->id == $id)? 'SELECTED': ''}}>
                         {{$type}}
                     </option>
@@ -85,6 +84,19 @@
             value = '{{ $incident->text}}'>
 
             <div class='error'>{{ $errors->first('text') }}</div>
+        </div>
+
+
+        <div class = "form-group">
+            <label for = "target_id">Target:</label>
+            <select name="target_id" id='target_id'>
+                @foreach($targets_for_dropdown as $target_id=>$mode)
+                    <option value='{{$target_id}}' {{($incident->target_id == $target_id)? 'SELECTED': ''}}>
+                        {{$mode}}
+                    </option>
+                @endforeach
+            </select>
+            <div class='error'>{{ $errors->first('target_id') }}</div>
         </div>
 
         <button type='submit' class='btn btn-primary'>Save changes</button>

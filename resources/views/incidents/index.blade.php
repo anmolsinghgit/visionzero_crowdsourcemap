@@ -22,8 +22,9 @@
         @foreach($incidents as $incident)
             <h5>{{$incident->type}}</h5>
             <p>{{$incident->text}}</p>
-            <a href='/edit/{{$incident->id}}'>Edit</a>
-            <a href='/confirm-delete/{{$incident->id}}'>Delete</a><br>
+            <a href ='/show/{{$incident->id}}'>More info </a>
+            <!-- <a href='/edit/{{$incident->id}}'>Edit</a>
+            <a href='/confirm-delete/{{$incident->id}}'>Delete</a><br> -->
         @endforeach
     </div>
 @stop

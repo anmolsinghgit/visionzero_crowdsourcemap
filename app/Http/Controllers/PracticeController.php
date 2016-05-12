@@ -32,15 +32,15 @@ class PracticeController extends Controller {
     }
     public function getEx25(){
 
-            JavaScript::put([
-                'foo' => 'bar'
-            ]);
+        # Eager load the target with the incident
+            $incidents = \Safetymap\Incident::with('target')->orderBy('target_id', 'ASC')->get();
 
-            $hello = 'hello';
-
-            return view('practice.test')->with('hello', $hello);
-
+            foreach($incidents as $incident) {
+            echo $incident->target->mode. '<br>';
+            }
+            dump($incidents->toArray());
     }
+
 
     public function getEx24() {
         $apiUrl = "http://map01.cityofboston.gov:6080/arcgis/rest/services/BTD/VZSafety/MapServer/0/query?inSR=4326&where=1%3D1&outSR=4326&outFields=*&returnGeometry=true&f=json&callback";

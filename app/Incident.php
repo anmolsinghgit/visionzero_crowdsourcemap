@@ -51,5 +51,34 @@ class Incident extends Model
 
 
 
+    public static function targetsForDropdown() {
+
+
+            // $targets = \Safetymap\Incident::with('target')->orderBy('target_id', 'ASC')->get();
+            $targets = \Safetymap\Target::orderBy('id', 'ASC')->get();
+
+            #key = target_id
+            #values= mode
+
+
+
+            $targets_for_dropdown = [];
+            $targets_for_dropdown[0] = 'Choose who is most at risk...';
+
+
+            #Build array for neighborhood dropdown
+            foreach($targets as $target){
+                $targets_for_dropdown[$target->id] = $target->mode;
+            }
+
+            // dump($targets_for_dropdown);
+
+            $targets_for_dropdown = array_unique($targets_for_dropdown);
+
+            return $targets_for_dropdown;
+    }
+
+
+
 
 }

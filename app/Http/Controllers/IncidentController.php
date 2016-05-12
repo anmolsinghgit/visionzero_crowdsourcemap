@@ -48,10 +48,13 @@ class IncidentController extends Controller {
 
         $neighborhoods_for_dropdown = \Safetymap\Incident::neighborhoodsForDropdown();
         $types_for_dropdown = \Safetymap\Incident::typesForDropdown();
+        $targets_for_dropdown = \Safetymap\Incident::targetsForDropdown();
 
         return view('incidents.create')
+
         ->with('neighborhoods_for_dropdown', $neighborhoods_for_dropdown)
-        ->with('types_for_dropdown', $types_for_dropdown);
+        ->with('types_for_dropdown', $types_for_dropdown)
+        ->with('targets_for_dropdown', $targets_for_dropdown);
     }
 
 
@@ -87,12 +90,13 @@ class IncidentController extends Controller {
         $incident->neighborhood = $request->neighborhood;
         $incident->type= $request->type;
         $incident->text= $request->text;
+        $incident->target_id= $request->target_id;
 
         $incident->save();
 
-        // #Mass Assignment
-        //
-        // $data= $request->only('latitude', 'longitude','neighborhood','type','text');
+        #Mass Assignment
+
+        // $data= $request->only('latitude', 'longitude','neighborhood','type','text', 'mode');
         // $incidents = new \Safetymap\Incident($data);
         // $incidents->save();
 
@@ -104,16 +108,26 @@ class IncidentController extends Controller {
         return redirect('/');
     }
 
-    public function getEdit($id){
+    public function getEdit($id=null){
+
+
         $incident = \Safetymap\Incident::find($id);
+
+        if(is_null($incident)) {
+            \Session::flash('message', 'Incident not found');
+            return redirect('/');
+        }
+
+
         $neighborhoods_for_dropdown = \Safetymap\Incident::neighborhoodsForDropdown();
         $types_for_dropdown = \Safetymap\Incident::typesForDropdown();
-
+        $targets_for_dropdown = \Safetymap\Incident::targetsForDropdown();
 
         return view('incidents.edit')
         ->with('incident', $incident)
         ->with('neighborhoods_for_dropdown', $neighborhoods_for_dropdown)
-        ->with('types_for_dropdown', $types_for_dropdown);
+        ->with('types_for_dropdown', $types_for_dropdown)
+        ->with('targets_for_dropdown', $targets_for_dropdown);
 
     }
 
@@ -125,6 +139,9 @@ class IncidentController extends Controller {
         $incident->neighborhood = $request->neighborhood;
         $incident->type = $request->type;
         $incident->text = $request->text;
+        $incident->target_id= $request->target_id;
+
+
         $incident->save();
 
 

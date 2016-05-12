@@ -75,8 +75,20 @@
             id = 'text'
             name = 'text'
             value = '{{ old('text', 'Need bike lanes or cycle tracks on Nashua St, especially northbound')}}'>
-
             <div class='error'>{{ $errors->first('text') }}</div>
+        </div>
+
+
+        <div class = "form-group">
+            <label for = "target_id">Target:</label>
+            <select name="target_id" id='target_id'>
+                @foreach($targets_for_dropdown as $target_id=>$mode)
+                    <option value='{{$target_id}}'>
+                        {{$mode}}
+                    </option>
+                @endforeach
+            </select>
+            <div class='error'>{{ $errors->first('target_id') }}</div>
         </div>
 
         <button type='submit' class="sForm" class='btn btn-primary'>Add incident</button>
@@ -91,10 +103,10 @@
  //        $.ajax({
  //                type: "POST",
  //
- //
  //                url: "http://localhost/create",
  //                data: {
- //                    lat:34
+ //                    lat:lat,
+                        long:long
  //                },
  //                cache: false,
  //                success: function(data) {
