@@ -117,7 +117,6 @@
             <p>Users with CRUD interactions are able to input locations of
                 dangerous intersections in Boston using a google maps interface and a user form. The latitude and longitude values of the locations will be used to create new markers on the map with tooltips
                 showing details about the “nearly missed” location given by the user. Users can read and update these points on the map.></p>
-
         </div>
       </div>
     </div>

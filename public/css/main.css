@@ -105,7 +105,7 @@ html { height: 100% }
     }
 }
 
-nav ul {
+.bottom_nav {
     list-style-type:none;
     margin:0;
     padding:0;
@@ -117,13 +117,14 @@ footer a:link, nav a:link {
     text-decoration:none;
 }
 
-nav ul li {
+.bottom_nav li {
     display:inline;
     background-color:lightgrey;
     padding:5px;
     margin-right:5px;
     border-radius: 5px;
     padding:4px;
+    box-shadow: 3px 3px 1px #888888;
 }
 
 #cyclist, #motorist, #pedestrian {
