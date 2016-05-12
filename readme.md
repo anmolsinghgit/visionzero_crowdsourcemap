@@ -13,7 +13,7 @@ Users with CRUD interactions are able to input locations of dangerous intersecti
 
 
 ## Demo
-<http://www.screencast.com/t/uriDXDLK0ddR>
+<http://screencast.com/t/x7PBy1Bq4Eo>
 
 ## Details for teaching team
 Project complete for the requirements of the course, but I will continue to work on it in the upcoming weeks. Follows CRUD but I will work to connect to Microsoft SQL server and map points from data api. <http://loosine.com/data>
