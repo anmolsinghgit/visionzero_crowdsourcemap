@@ -37,11 +37,11 @@
     </header>
 
 
-    <div class="control-group">
+    <div class="map_search">
             <input type="text" id="address">
-            <input type="button" value="find" onClick="boston.geocode()" class="btn btn-primary">
+            <input type="button" value="find address on map" onClick="boston.geocode()" class="btn btn-primary">
     </div>
-
+    <br>
 
         <!-- map div container -->
         <div id="map_canvas"></div>
@@ -76,10 +76,7 @@
         @yield('page-script')
     </section>
 
-    <!-- Button to go into edit mode -->
-    <div class="draw-button">
-        <span id="edit-button" class="btn " onclick="boston.toggleEditMode()"><i class="icon-pencil"></i> Let me draw on this map</span>
-    </div>
+
 
     <!-- <footer>
         &copy; {{ date('Y') }}

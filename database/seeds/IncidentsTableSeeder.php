@@ -33,7 +33,7 @@ class IncidentsTableSeeder extends Seeder
        'type' => 'Of something not listed here',
        'text' => 'Cars heading south on North St block the box which makes it unsafe for pedestrians and hard for cars on Clinton St turning left',
        'user_id'=>1,
-       'target_id'=>1,
+       'target_id'=>2,
         ]);
 
 
@@ -74,17 +74,6 @@ class IncidentsTableSeeder extends Seeder
          'target_id'=>2,
         ]);
 
-        \DB::table('incidents')->insert([
-        'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        'latitude' => 42.30175671,
-        'longitude' => -71.0978396443,
-        'neighborhood' => 'Dorchester',
-        'type' => 'Too many lanes to cross',
-        'text' => "An old woman tried to cross a parking lane, 2 travel lanes, 2 trolley tracks, and then 2 more travel lanes from The Mission towards the Santander. Her carriage kept getting stuck on the tracks and I feared a turning vehicle would wipe her out!",
-         'user_id'=>2,
-         'target_id'=>2,
-        ]);
 
         \DB::table('incidents')->insert([
         'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
@@ -95,7 +84,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'The roadway surface needs improvement',
         'text' => "The divider island has sunk into the ground and there's poor signage about the left lane needing to turn left onto S Huntington. Cars always crash into the median and take out the signs.",
          'user_id'=>2,
-         'target_id'=>2,
+         'target_id'=>3,
         ]);
 
 
@@ -108,7 +97,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'Speed',
         'text' => "People drive like they're in a road race. The physical landscape seems to support this behavior.",
          'user_id'=>2,
-         'target_id'=>2,
+         'target_id'=>3,
         ]);
 
 
@@ -135,7 +124,7 @@ class IncidentsTableSeeder extends Seeder
                 'type' => 'Bike facilities do not exist or need improvement',
                 'text' => "Dangerous pinch point for cyclists going North on Dorchester Ave. Wide intersection quickly turns into two very narrow lanes (w/ sharrows). Cars/trucks can easily squeeze out a bike where road narrows.",
                  'user_id'=>2,
-                 'target_id'=>2,
+                 'target_id'=>1,
                 ]);
 
                 \DB::table('incidents')->insert([
@@ -147,7 +136,7 @@ class IncidentsTableSeeder extends Seeder
                 'type' => 'Of something that is not listed here',
                 'text' => "The bike lane is wide enough to accommodate a car, so drivers use it as a driving lane. The city should install flex-posts to prevent driving in the bike lane.",
                  'user_id'=>2,
-                 'target_id'=>2,
+                 'target_id'=>1,
                 ]);
 
                 \DB::table('incidents')->insert([
@@ -159,7 +148,7 @@ class IncidentsTableSeeder extends Seeder
                 'type' => 'Of something not listed here',
                 'text' => "Biking from Watertown towards Boston, there is no street light to follow when going along the bike path. Bikers have to guess which directions currently have green.",
                  'user_id'=>2,
-                 'target_id'=>2,
+                 'target_id'=>1,
                 ]);
 
 
@@ -172,7 +161,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'Bike facilities or they need maintenance',
         'text' => "Drivers fly down this block at 40 mph. There is no bike lane, so the only way to even moderately safely ride on this block is to take the lane. Unfortunately this tends to make drivers EXTREMELY angry, which creates a new set of safety concerns.",
          'user_id'=>2,
-         'target_id'=>2,
+         'target_id'=>1,
         ]);
 
         \DB::table('incidents')->insert([
@@ -184,7 +173,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'Cars do not yield',
         'text' => "Left hook risk here, at least dash the bike lane through the intersection.",
          'user_id'=>2,
-         'target_id'=>2,
+         'target_id'=>1,
         ]);
 
         \DB::table('incidents')->insert([
@@ -196,7 +185,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'Speed',
         'text' => "Particularly going eastbound, cars go very fast in anticipation of merging onto the Mass Pike",
          'user_id'=>2,
-         'target_id'=>2,
+         'target_id'=>3,
         ]);
 
         \DB::table('incidents')->insert([
@@ -208,7 +197,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'Cars do not yield',
         'text' => "Riding south on Harrison to Warren through here is very sketch",
          'user_id'=>2,
-         'target_id'=>2,
+         'target_id'=>3,
         ]);
 
 
@@ -233,7 +222,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'People run red lights / stop signs',
         'text' => "People ignore the no left turn sign ( in front of the police station) and it is often destroyed",
          'user_id'=>1,
-         'target_id'=>2,
+         'target_id'=>1,
         ]);
 
         \DB::table('incidents')->insert([
@@ -257,7 +246,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'People double park their vehicles',
         'text' => "People park in the bus lane making it hard for buses to go straight and drivers to turn right",
          'user_id'=>1,
-         'target_id'=>2,
+         'target_id'=>1,
         ]);
 
         \DB::table('incidents')->insert([
@@ -269,7 +258,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'Cars do not yield',
         'text' => "They roll into the crosswalk and block bike's or pedestrian's way across.",
          'user_id'=>1,
-         'target_id'=>2,
+         'target_id'=>1,
         ]);
 
         \DB::table('incidents')->insert([
@@ -281,7 +270,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'The roadway surface needs improvement',
         'text' => "The pavement especially in the bike lanes needs to be repaired. I prefer to take the lane here as otherwise it's a mess.",
          'user_id'=>2,
-         'target_id'=>2,
+         'target_id'=>3,
         ]);
 
 
@@ -306,7 +295,7 @@ class IncidentsTableSeeder extends Seeder
         'type' => 'People run red lights / stop signs',
         'text' => "Drivers do not stop at the stop sign",
          'user_id'=>2,
-         'target_id'=>2,
+         'target_id'=>1,
         ]);
 
 

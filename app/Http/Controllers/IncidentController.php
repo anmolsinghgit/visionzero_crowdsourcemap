@@ -41,17 +41,12 @@ class IncidentController extends Controller {
 
     public function getCreate() {
 
-        // if(!\Auth::check()) {
-        //     \Session::flash('message', 'You have to be logged in to create a new concern');
-        //     return redirect('/');
-        // }
 
         $neighborhoods_for_dropdown = \Safetymap\Incident::neighborhoodsForDropdown();
         $types_for_dropdown = \Safetymap\Incident::typesForDropdown();
         $targets_for_dropdown = \Safetymap\Incident::targetsForDropdown();
 
         return view('incidents.create')
-
         ->with('neighborhoods_for_dropdown', $neighborhoods_for_dropdown)
         ->with('types_for_dropdown', $types_for_dropdown)
         ->with('targets_for_dropdown', $targets_for_dropdown);
@@ -66,19 +61,13 @@ class IncidentController extends Controller {
             'max' => 'You have to choose a neighborhood.'
         ];
 
-        $lat = $request->lat;
-        $long = $request->long;
-
-        dump($lat);
-
-        // return view('practice.test')->('lat', $lat);
-
 
         $this->validate($request, [
             'type'=>'required|min:3|not_in:0',
             'latitude'=>'required',
             'longitude'=>'required',
-            'neighborhood'=> 'not_in:0|max:19'
+            'neighborhood'=> 'not_in:0|max:19',
+            // 'target_id'=>'required',
 
         ], $messages);
 
@@ -90,9 +79,11 @@ class IncidentController extends Controller {
         $incident->neighborhood = $request->neighborhood;
         $incident->type= $request->type;
         $incident->text= $request->text;
+        $incident->user_id = \Auth::id();
         $incident->target_id= $request->target_id;
-
-        $incident->save();
+        //
+        // dump($request->target_id);
+         $incident->save();
 
         #Mass Assignment
 
@@ -105,7 +96,7 @@ class IncidentController extends Controller {
 
         \Session::flash('message', 'Your concern was added');
 
-        return redirect('/');
+        return redirect('/index');
     }
 
     public function getEdit($id=null){
@@ -115,7 +106,7 @@ class IncidentController extends Controller {
 
         if(is_null($incident)) {
             \Session::flash('message', 'Incident not found');
-            return redirect('/');
+            return redirect('/index');
         }
 
 
@@ -141,12 +132,12 @@ class IncidentController extends Controller {
         $incident->text = $request->text;
         $incident->target_id= $request->target_id;
 
-
+        dump($request->target_id);
         $incident->save();
 
 
         \Session::flash('message', 'Your changes were saved');
-        return redirect ('/edit/'.$request->id);
+        return redirect ('/show/'.$request->id);
     }
 
     public function getConfirmDelete($id) {

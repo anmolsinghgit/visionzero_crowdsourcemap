@@ -15,7 +15,7 @@ class WelcomeController extends Controller {
 
         # Logged in users should not see the welcome page, send them to the books index instead.
         if(\Auth::check()) {
-            return redirect('/create');
+            return redirect('/index');
         }
 
         return view('incidents.home');

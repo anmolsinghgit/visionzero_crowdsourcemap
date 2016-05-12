@@ -25,10 +25,30 @@
 
     <div class= 'incidents'>
         @foreach($incidents as $incident)
-            <h5>{{$incident->type}}</h5>
+
+
+                @if ($incident->target_id == 2)
+                    <img id ="pedestrian_small"
+                    src='/images/pedestrian.png'
+                    alt='pedestrian'
+                    align="left">
+                @elseif ($incident->target_id == 1)
+                    <img id ="cyclist_small"
+                    src='/images/cyclist.png'
+                    alt='cyclist'
+                    align="left">
+                @elseif ($incident->target_id == 1)
+                    <img id ="motorist_small"
+                    src='/images/motorist.png'
+                    alt='motorist'
+                    align="left">
+                @endif
+            <h4>{{$incident->type}}</h4>
             <p>{{$incident->text}}</p>
-            <a href='/edit/{{$incident->id}}'>Edit</a>
-            <a href='/confirm-delete/{{$incident->id}}'>Delete</a><br>
+            <a class='links'href='/edit/{{$incident->id}}'>Edit</a>
+            <a class='links'href='/confirm-delete/{{$incident->id}}'>Delete</a>
+            <a class='links'href ='/show/{{$incident->id}}'>More info </a>
+            <br>
         @endforeach
     </div>
 

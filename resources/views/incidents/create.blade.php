@@ -6,6 +6,9 @@
 @stop
 
 @section('content')
+    @if(Session::get('flash_message') != null))
+    <div class='flash_message'>{{ Session::get('flash_message') }}</div>
+    @endif
 
     @if(count($errors) > 0)
     <ul>
@@ -68,16 +71,16 @@
 
         <div class = "form-group">
             <label>Details:</label>
-            <input class="form-control"
+            <textarea rows="4" cols="50" class="form-control"
             type='text'
             cols= "20"
             rows = '3'
+
             id = 'text'
             name = 'text'
-            value = '{{ old('text', 'Need bike lanes or cycle tracks on Nashua St, especially northbound')}}'>
+            value = '{{ old('text', 'Need bike lanes or cycle tracks on Nashua St, especially northbound')}}'> </textarea>
             <div class='error'>{{ $errors->first('text') }}</div>
         </div>
-
 
         <div class = "form-group">
             <label for = "target_id">Target:</label>
@@ -91,8 +94,14 @@
             <div class='error'>{{ $errors->first('target_id') }}</div>
         </div>
 
+
         <button type='submit' class="sForm" class='btn btn-primary'>Add incident</button>
     </form>
+
+    <!-- Button to go into edit mode -->
+    <div class="draw-button">
+        <span id="edit-button" class="btn " onclick="boston.toggleEditMode()"><i class="icon-pencil"></i> Let me draw on this map</span>
+    </div>
 @stop
 
 

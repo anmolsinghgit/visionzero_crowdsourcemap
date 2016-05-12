@@ -53,11 +53,6 @@ form, #form {
 
 }
 
-#bubbles {
-    float:left;
-    display:inline-block;
-    width:700px;
-}
 
 #wrapper {
     width: 100%;
@@ -80,7 +75,7 @@ form, #form {
     position:fixed;
     top:0;
     left:0;
-    background-color:yellow;
+    background-color:#66FFFF;
     font-weight:bold;
 }
 
@@ -114,6 +109,8 @@ nav ul {
     list-style-type:none;
     margin:0;
     padding:0;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 footer a:link, nav a:link {
@@ -122,7 +119,37 @@ footer a:link, nav a:link {
 
 nav ul li {
     display:inline;
-    background-color:#eee;
+    background-color:#99FF99;
     padding:5px;
     margin-right:5px;
+    border-radius: 5px;
+    padding:4px;
+}
+
+#cyclist, #motorist, #pedestrian {
+    width:150px;
+    padding:10px;
+}
+
+.map_search {
+    margin-left: 10px;
+}
+
+#cyclist_small, #motorist_small, #pedestrian_small {
+    width:80px;
+    padding:10px;
+}
+
+.incident_single {
+    margin-left: 20px;
+}
+
+.incident{
+    margin-left: 20px;
+}
+
+.links {
+    float:right;
+    padding-right:20px;
+
 }

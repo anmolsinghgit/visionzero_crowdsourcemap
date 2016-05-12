@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Incident extends Model
 {
-    protected $fillable= ['latitude','longitude','neighborhood','type','text'];
+    protected $fillable= ['latitude','longitude','neighborhood','type','text', 'user_id', 'target_id'];
 
     public function user() {
         return $this->belongsTo('\Safetymap\User');

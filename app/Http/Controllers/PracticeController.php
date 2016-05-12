@@ -107,7 +107,8 @@ class PracticeController extends Controller {
         $incident->neighborhood = 'South Boston Waterfront';
         $incident->type = 'People double park their vehicles';
         $incident->text = 'Nearly every day there is a Budweiser or other beer delivery truck (never Harpoon, though!) double parked on India St. Sometimes they are even partially blocking Milk. This makes it impossible to see down India street for oncoming traffic.';
-
+        $incident->user_id = 2;
+        $incident->target_id = 2;
         # Invoke the Eloquent save() method
         # This will generate a new row in the `incidents` table, with the above data
         $incident->save();

@@ -18,13 +18,26 @@
     @endif
     <h3> View all safety concerns </h3>
 
-    <div class= 'incidents'>
+    <div class= 'incidents_index'>
         @foreach($incidents as $incident)
-            <h5>{{$incident->type}}</h5>
-            <p>{{$incident->text}}</p>
-            <a href ='/show/{{$incident->id}}'>More info </a>
+        @if ($incident->target_id == 2)
+        <a href='/show/{{$incident->id}}'>
+        <img align="left" id ="pedestrian_small"border="0" src='/images/pedestrian.png'></a>
+        @elseif ($incident->target_id == 1)
+        <a href='/show/{{$incident->id}}'>
+        <img align="left" id ="cyclist_small"border="0" src='/images/cyclist.png'></a>
+        @else ($incident->target_id == 1)
+        <a href='/show/{{$incident->id}}'>
+        <img align="left" id ="motorist_small"border="0" src='/images/motorist.png'></a>
+        @endif
+
+            <h4>Concern: {{$incident->type}}</h4>
+            <p>Comment: {{$incident->text}}</p>
+            <a class='links'href ='/show/{{$incident->id}}'>More info </a>
+            <br>
             <!-- <a href='/edit/{{$incident->id}}'>Edit</a>
             <a href='/confirm-delete/{{$incident->id}}'>Delete</a><br> -->
         @endforeach
+
     </div>
 @stop

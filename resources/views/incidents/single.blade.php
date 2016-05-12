@@ -26,19 +26,26 @@
     </ul>
     @endif
 
-    <div class= 'incident'>
-        <h5>{{$incident->type}}</h5>
-        <p>{{$incident->text}}</p>
-        <p>{{$incident->neighborhood}}</p>
-        <p>{{$incident->target_id}}</p>
-
+    <div class= 'incident_single'>
+        <h5>Concern: {{$incident->type}}</h5>
+        <p>My comments: {{$incident->text}}</p>
+        <p>Neighborhood: {{$incident->neighborhood}}</p>
+        <p>Time Input: {{$incident->created_at}}</p>
         @if ($incident->target_id == 2)
-            <p>yo</p>
+            <img id ="pedestrian"
+            src='/images/pedestrian.png'
+            alt='pedestrian'
+            align="left">
         @elseif ($incident->target_id == 1)
-            <p>sup</p>
-
+            <img id ="cyclist"
+            src='/images/cyclist.png'
+            alt='cyclist'
+            align="left">
         @elseif ($incident->target_id == 1)
-            <p>sup</p>
+            <img id ="motorist"
+            src='/images/motorist.png'
+            alt='motorist'
+            align="left">
         @endif
 
         <!-- <a href='/edit/{{$incident->id}}'>Edit</a>
