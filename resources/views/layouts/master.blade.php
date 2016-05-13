@@ -5,8 +5,8 @@
 </style>
 
     <title>
-        {{-- Yield the title if it exists, otherwise default to 'Foobooks' --}}
-        @yield('title','Foobooks')
+        {{-- Yield the title if it exists, otherwise default to 'Safety Application' --}}
+        @yield('title','Safety Application')
     </title>
 
     <meta charset='utf-8'>
@@ -18,10 +18,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'>
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
     <script type="text/javascript" src= 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-    <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css' rel='stylesheet'>
     <script type="text/javascript" src="/js/main.js"></script>
 
 
@@ -35,7 +34,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="http://p1.loosine.com" class= "external">Home</a></li>
                 <li><a href="http://p2.loosine.com" class= "external">Project 2</a></li>
-                <li><a href="http://p3.loosine.com">Project 3</a></li>
+                <li><a href="http://p3.loosine.com" class= "external">Project 3</a></li>
                 <li class="active"><a href="#">Project 4</a></li>
                 <li class="active"><a href="https://github.com/lvartani/p4">Github</a></li>
             </ul>
