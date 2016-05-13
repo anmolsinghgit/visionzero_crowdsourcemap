@@ -27,6 +27,10 @@ img#logo {
     top:0px;
 }
 
+
+.navbar{
+    border-width: 1px !important;
+}
 .description {
     font-family: 'Raleway';
     background-color: grey;
@@ -46,10 +50,6 @@ form, #form {
     display:inline-block;
     padding:20px;
     margin-left: 20px;
-
-}
-
-#content {
 
 }
 
@@ -156,4 +156,9 @@ footer a:link, nav a:link {
 }
 #about {
     float:right
+}
+#about_content{
+
+    margin-right:10px !important;
+    margin-left:10px !important;
 }
