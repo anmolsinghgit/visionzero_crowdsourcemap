@@ -1,11 +1,10 @@
-## P4
-## Nearly Missed Me Application
+
+## Boston Safety Application ### P4
 
 ## Live URL
 <http://p4.loosine.com>
 
 ## Description
-Boston Bike Safety 
 These are locations where cyclists, pedestrians, motorists and  were “nearly missed” by motor vehicles. 
 
 Description
@@ -18,8 +17,8 @@ The latitude and longitude values of the locations will be used (in the future) 
 <http://screencast.com/t/x7PBy1Bq4Eo>
 
 ## Details for teaching team
-Updated P4 Planning Doc [Boston Safety Application](https://docs.google.com/document/d/1YRT9EuURJryZS46m-99nlrVMbIKe5mEvlHv5yHDzEoQ/edit#)
-Project complete for the requirements of the course, but I will continue to work on it in the upcoming weeks. Following the course, I will work to connect to Microsoft SQL server, parse data from safety map database to map points. Data from ArcGIS Map Service in json format<http://loosine.com/data>
+ [Updated P4 Planning Doc](https://docs.google.com/document/d/1YRT9EuURJryZS46m-99nlrVMbIKe5mEvlHv5yHDzEoQ/edit#)
+Project adheres to the requirements of the course, but I will continue to work on it in the upcoming weeks. Following the course, I will work to connect to Microsoft SQL server to input data into a database and then parse data to map points. Data from ArcGIS Map Service in json format<http://loosine.com/data>
 
 
 ## Outside code
