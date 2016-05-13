@@ -7,11 +7,8 @@ use Illuminate\Http\Request;
 
 class IncidentController extends Controller {
 
-    /**
-    * Responds to requests to GET /books
-    */
 
-    //If have another table add in eager loading
+
     public function getIndex() {
         $incidents = \Safetymap\Incident::where('user_id','=', \Auth::id())->orderBy('id', 'desc')->get();
         return view('incidents.show')->with('incidents', $incidents);
@@ -33,14 +30,10 @@ class IncidentController extends Controller {
         }
 
         return view('incidents.single')->with('incident', $incident);
-
-
-        // return 'Show incident: '.$id;
     }
 
 
     public function getCreate() {
-
 
         $neighborhoods_for_dropdown = \Safetymap\Incident::neighborhoodsForDropdown();
         $types_for_dropdown = \Safetymap\Incident::typesForDropdown();
@@ -60,7 +53,6 @@ class IncidentController extends Controller {
             'not_in' => 'You have to choose an option.',
             'max' => 'You have to choose a neighborhood.'
         ];
-
 
         $this->validate($request, [
             'type'=>'required|not_in:0',
@@ -84,7 +76,7 @@ class IncidentController extends Controller {
         $incident->user_id = \Auth::id();
         $incident->target_id= $request->target_id;
         //
-        // dump($request->target_id);
+
          $incident->save();
 
         #Mass Assignment
@@ -97,12 +89,10 @@ class IncidentController extends Controller {
         // \Safetymap\Incident::create($data);
 
         \Session::flash('message', 'Your concern was added');
-
         return redirect('/index');
     }
 
     public function getEdit($id=null){
-
 
         $incident = \Safetymap\Incident::find($id);
 
@@ -151,7 +141,6 @@ class IncidentController extends Controller {
 
     public function getDoDelete($id) {
 
-        # Get the book to be deleted
         $incident = \Safetymap\Incident::find($id);
 
         if(is_null($incident)) {
@@ -159,21 +148,10 @@ class IncidentController extends Controller {
             return redirect('/');
         }
 
-
-
-        #  delete the book
         $incident->delete();
 
-        # Done
         \Session::flash('message',$incident->type.' was deleted.');
         return redirect('/');
-
     }
-    // public function postValue(Request $request){
-    //     $lat = $request['lat'];
-    //     $long = $request['long'];
-    //
-    //     print $lat;
-    //
-    // }
+
 }

@@ -37,7 +37,7 @@
                     src='/images/cyclist.png'
                     alt='cyclist'
                     align="left">
-                @elseif ($incident->target_id == 1)
+                @elseif ($incident->target_id == 3)
                     <img id ="motorist_small"
                     src='/images/motorist.png'
                     alt='motorist'

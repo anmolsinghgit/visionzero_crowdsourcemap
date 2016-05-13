@@ -41,14 +41,13 @@
             src='/images/cyclist.png'
             alt='cyclist'
             align="left">
-        @elseif ($incident->target_id == 1)
+        @else ($incident->target_id == 3)
             <img id ="motorist"
             src='/images/motorist.png'
             alt='motorist'
             align="left">
         @endif
 
-        <!-- <a href='/edit/{{$incident->id}}'>Edit</a>
-        <a href='/confirm-delete/{{$incident->id}}'>Delete</a><br> -->
+
     </div>
 @stop

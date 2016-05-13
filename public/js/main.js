@@ -1,7 +1,7 @@
-//declare namespace
+//namespace
 var boston = {};
 
-//declare map
+//map
 var map;
 
 //drawingManager
@@ -13,8 +13,9 @@ var lat;
 
 var long;
 
-//set the geocoder
+//geocoder
 var geocodemarker;
+
 var geocoder = new google.maps.Geocoder();
 
 function trace(message)
@@ -54,7 +55,7 @@ boston.initialize = function()
         },
         markerOptions: {
 
-            draggable: false
+            draggable: true
         }
     });
 
@@ -94,14 +95,12 @@ boston.initialize = function()
         long = point.overlay.getPosition().lng();
 
 
-
         $.post('/IncidentController/create', {lat:lat, long:long}, function(data) {
             console.log(data);
         });
 
 
         // $('.sForm').on('click', function () {
-        //
         //
         //         $.ajax({
         //                 type: "POST",
@@ -123,11 +122,7 @@ boston.initialize = function()
     });
 
 
-
-
 }
-
-
 
 
 
