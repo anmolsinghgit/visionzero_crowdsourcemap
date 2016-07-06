@@ -14,6 +14,11 @@ class IncidentController extends Controller {
         return view('incidents.show')->with('incidents', $incidents);
     }
 
+    public function getData(Request $request) {
+        $incidents = \Safetymap\Incident::orderBy('id', 'desc')->get();
+        return response()->json($incidents);
+        // return view('incidents.show')->with('incidents', $incidents);
+    }
 
     public function getAll() {
         $incidents = \Safetymap\Incident::orderBy('id', 'desc')->get();
@@ -49,7 +54,6 @@ class IncidentController extends Controller {
     public function postCreate(Request $request) {
 
         $messages = [
-
             'not_in' => 'You have to choose an option.',
             'max' => 'You have to choose a neighborhood.'
         ];

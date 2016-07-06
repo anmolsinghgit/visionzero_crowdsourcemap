@@ -56,11 +56,14 @@ Route::get('/view', 'IncidentController@getIndex');
 #View all incidents
 Route::get('/index','IncidentController@getAll');
 
+Route::get('/test', 'IncidentController@getData');
+
 Route::group(['middleware'=> 'auth'], function() {
 
     #Create submission
     Route::get('/create', 'IncidentController@getCreate');
     Route::post('/create', 'IncidentController@postCreate');
+
 
     #Edit submission
     Route::get('/edit/{id?}', 'IncidentController@getEdit');

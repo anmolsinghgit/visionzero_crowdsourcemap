@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
     <script type="text/javascript" src= 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/main2.js"></script>
 
 
 
@@ -43,9 +43,11 @@
 
 
     <header>
-        <img id ="logo"
-        src='/images/311head.png'
+        <h1 class="title_header">City of Boston</h1>
+        <img class="title_header" id ="logo"
+        src='/images/vzero_logo.png'
         alt='Safetymap Logo'>
+        <h1 id="vzero_title"class="title_header">Vision Zero</h1>
         <button type="button" id ="about" class="btn btn-primary" data-toggle="modal" data-target="#myModal">About this project</button>
 
     </header>

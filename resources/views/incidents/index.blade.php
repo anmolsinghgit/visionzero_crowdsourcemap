@@ -33,11 +33,15 @@
 
                 <h4>Concern: {{$incident->type}}</h4>
                 <p>Comment: {{$incident->text}}</p>
+
                 <a class='links'href ='/show/{{$incident->id}}'>More info </a>
                 <br>
             <!-- <a href='/edit/{{$incident->id}}'>Edit</a>
             <a href='/confirm-delete/{{$incident->id}}'>Delete</a><br> -->
         @endforeach
-
+        <!-- <div class ="hidden_markers">
+            <input type="hidden" class="hidden_lat" value= '{{$incidents}}'></>
+            <input type="hidden" class="hidden_long" value= '{{$incidents}}'></>
+        </div> -->
     </div>
 @stop

@@ -44,6 +44,7 @@
                     align="left">
                 @endif
             <h4>{{$incident->type}}</h4>
+            <input type= "hidden" id ="test" value= "{{$incident->latitude}}"></>
             <p>{{$incident->text}}</p>
             <a class='links'href='/edit/{{$incident->id}}'>Edit</a>
             <a class='links'href='/confirm-delete/{{$incident->id}}'>Delete</a>

@@ -9,9 +9,7 @@ var drawingManager;
 
 var infowindow;
 
-var lat;
-
-var long;
+var bounds;
 
 //geocoder
 var geocodemarker;
@@ -29,12 +27,22 @@ function trace(message)
 //Function that gets run when the document loads
 boston.initialize = function()
 {
+    var styles = [
+        {
+            stylers: [
+                { saturation: -100 }
+            ]
+        }
+    ];
     var latlng = new google.maps.LatLng(42.361061082707735, -71.06494315669636);
     var myOptions = {
         zoom: 13,
         center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles:styles
+
     };
+
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
     //allow pressing "enter"
@@ -44,10 +52,11 @@ boston.initialize = function()
             up206b.geocode();
         }
     });
-    var datatest = $('.hidden_').val();
-    console.log(datatest);
+    var lattest = $('.hidden_lat').val();
+    var longtest= $('.hidden_long').val();
 
-    boston.mapMarkers(lattest, longtest);
+    // console.log(lattest);
+    boston.mapMarkers(lattest);
     //add the drawing tool that allows users to draw points on the map
     drawingManager = new google.maps.drawing.DrawingManager({
         drawingMode: google.maps.drawing.OverlayType.MARKER,
@@ -130,34 +139,62 @@ boston.initialize = function()
 }
 
 //map markers
-boston.mapMarkers = function(lat, long){
-    var incident_markers =[]
-    var image = {
-    url: '/images/cyclist_marker.png',
-    // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(30, 32),
-    // The origin for this image is (0, 0).
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(0, 32)
-  };
+boston.mapMarkers = function(data){
+    console.log(data);
+    bounds = new google.maps.LatLngBounds();
+    $.get('/test',
+        function(data)
+        {
+            var incidents =[]
+            // console.log(data);
+            $.each(data, function(i, item) {
+                console.log(item);
+                var icon;
+                if (item.target_id== 1) {
+                    icon ='/images/cyclist_marker.png';
+                }
+                else if (item.target_id == 3) {
+                    icon = '/images/motorist_marker.png';
+                }
+                else if (item.target_id == 2){
+                    icon = '/images/pedestrian_marker.png';
+                }
+                else {
+                    icon = '/images/cyclist_marker.png';
+                }
+
+                var markerLatLng = new google.maps.LatLng(item.latitude,item.longitude);
+
+                bounds.extend(markerLatLng);
+                map.fitBounds(bounds);
+
+                var thisincident = new google.maps.Marker({
+                    position: markerLatLng,
+                    map: map,
+                    icon:icon
+                    // title: item.display_name
+                });
+                var contentString= "Description: " + item.text +" <br><br>"+ "Type:" +item.type;
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                thisincident.addListener('mouseover', function() {
+                    infowindow.open(map, thisincident);
+                    thisincident.setIcon('/images/marker_black.png');
+                });
+                thisincident.addListener('mouseout', function() {
+                    infowindow.close(map, thisincident);
+                    thisincident.setIcon(icon);
+                });
+                incidents.push(thisincident); //adds this new stop to the incident array
+            });
+        }
+    );
 
 
 
-    var    marker = new google.maps.Marker({
-            position: new google.maps.LatLng(lat,long),
-            map: map,
-            icon: '/images/cyclist_marker.png'
 
-    });
-
-    //add the marker to the incident_markers array
-        //incident_markers[i] = marker;
-
-    //add an infowindow
-    //    google.maps.event.addListener(incident_markers[i], "mouseover", function () {
-    //        infowindow_public.setContent("<div class='infowindow'><strong>" + lat+ "</strong> " + long + "<p class='infowindow-paragraph'><strong>" + lat + "</strong><br>" + long+ "</p></div>");
-    //        infowindow_public.open(map, incident_markers[i]);
-    //    });
 
 
 }

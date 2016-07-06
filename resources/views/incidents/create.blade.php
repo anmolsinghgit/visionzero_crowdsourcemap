@@ -22,9 +22,9 @@
     <form method ='POST' class='form-horizontal save-form' id='form_' onsubmit='myFunction();' action = "/create">
         {{csrf_field()}}
         <div class = "form-group">
-            <label>Latitude:</label>
-            <input type ='text'
-            id = 'latitude'
+            <!-- <label>Latitude:</label> -->
+            <input type ='hidden'
+            id = 'lat_form'
             name = 'latitude'
             value = '{{ old('latitude', '42.367280')}}'
             >
@@ -33,9 +33,9 @@
         </div>
 
         <div class = "form-group">
-            <label>Longitude:</label>
-            <input type ='text'
-            id = 'longitude'
+            <!-- <label>Longitude:</label> -->
+            <input type ='hidden'
+            id = 'long_form'
             name = 'longitude'
             value = '{{ old('longitude','-71.0650312')}}'
             >
