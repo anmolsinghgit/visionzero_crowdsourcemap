@@ -12,8 +12,6 @@ Users with CRUD interactions are able to input locations of dangerous intersecti
 The latitude and longitude values of the locations is used to create new markers on the map with tooltips showing details about the “nearly missed” locations given by the user. 
 
 
-### Demo
-<http://screencast.com/t/x7PBy1Bq4Eo>
 
 Structure (https://docs.google.com/document/d/1YRT9EuURJryZS46m-99nlrVMbIKe5mEvlHv5yHDzEoQ/edit#)
  
