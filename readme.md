@@ -9,7 +9,7 @@ These are locations where cyclists, pedestrians, motorists and  were “nearly m
 Description
 Users with CRUD interactions are able to input locations of dangerous intersections in Boston using a form. Guests will be able to view all incidents, but only registered users will be able to create, edit, or delete incidents. Users can also search for address and view intersection in the google map to the right of the view. Users can also input data from the map directly. 
 
-The latitude and longitude values of the locations will be used (in the future) to create new markers on the map with tooltips showing details about the “nearly missed” locations given by the user. 
+The latitude and longitude values of the locations is used to create new markers on the map with tooltips showing details about the “nearly missed” locations given by the user. 
 
 
 ### Demo
